@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Годовой отчет для S.R.O. за 2025 год — Наталья Воинова</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #4e8f82;
+  --teal-dark: #3a6e63;
+  --teal-light: #7ab5a8;
+  --teal-pale: #eaf4f2;
+  --cream: #faf9f6;
+  --warm-white: #f5f3ef;
+  --text-dark: #1a2e28;
+  --text-mid: #4a6b62;
+  --text-light: #8aada5;
+  --urgent: #c0392b;
+  --urgent-light: #fdf0ef;
+  --border: #d8ebe6;
+  --shadow: 0 4px 32px rgba(78,143,130,0.10);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.65; overflow-x: hidden; }
+
+/* HEADER */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,249,246,0.96); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 40px; display: flex; align-items: center; justify-content: space-between;
+}
+/* FIX: logo uses img tag — make sure it always shows */
+.logo { text-decoration: none; display: flex; align-items: center; }
+.logo img { height: 44px; width: auto; display: block; max-width: 160px; }
+/* Fallback text if logo image fails */
+.logo-fallback { display: none; font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; color: var(--teal-dark); letter-spacing: -0.5px; }
+.header-cta {
+  background: var(--teal); color: #fff; border: none; border-radius: 50px;
+  padding: 10px 28px; font-family: 'Jost', sans-serif; font-size: 0.85rem;
+  font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  cursor: pointer; transition: background 0.25s, transform 0.2s;
+  text-decoration: none; display: inline-block;
+}
+.header-cta:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+/* URGENCY BANNER */
+.urgency-banner {
+  background: linear-gradient(90deg, var(--teal-dark), var(--teal));
+  color: #fff; text-align: center; padding: 10px 20px; font-size: 0.9rem; font-weight: 500;
+}
+.urgency-banner strong { color: #a8ddd4; }
+
+/* HERO — no photo, text only, wider layout */
+.hero { background: var(--cream); padding: 80px 80px 72px; display: flex; flex-direction: column; align-items: flex-start; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--teal-pale); color: var(--teal); border-radius: 50px; padding: 6px 16px;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 900; line-height: 1.15; color: var(--text-dark); margin-bottom: 12px;
+  max-width: 800px;
+}
+.hero h1 em { color: var(--teal); font-style: normal; }
+.hero-sub {
+  font-size: 1.15rem; color: var(--text-mid); margin-bottom: 36px;
+  font-weight: 500; line-height: 1.5; max-width: 560px;
+}
+.hero-sub strong { color: var(--urgent); }
+.price-cards { display: flex; gap: 16px; margin-bottom: 36px; flex-wrap: wrap; }
+.price-card {
+  background: #fff; border: 2px solid var(--border); border-radius: 16px;
+  padding: 18px 22px; min-width: 200px; position: relative;
+}
+.price-card.featured { border-color: var(--teal); background: var(--teal-pale); }
+.price-card .badge {
+  position: absolute; top: -10px; left: 16px; background: var(--teal); color: #fff;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 50px; text-transform: uppercase;
+}
+.price-card .label { font-size: 0.78rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; font-weight: 500; }
+.price-card .amount { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; color: var(--teal-dark); line-height: 1; }
+.price-card.urgent-card .amount { color: var(--urgent); }
+.price-card .desc { font-size: 0.78rem; color: var(--text-mid); margin-top: 4px; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--teal); color: #fff; border: none; border-radius: 50px;
+  padding: 18px 44px; font-family: 'Jost', sans-serif; font-size: 0.9rem;
+  font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; transition: all 0.3s; text-decoration: none;
+  box-shadow: 0 8px 30px rgba(78,143,130,0.35);
+}
+.btn-primary:hover { background: var(--teal-dark); transform: translateY(-3px); }
+.btn-primary::after { content: '→'; font-size: 1.1rem; }
+.btn-primary.multiline { flex-direction: column; gap: 2px; text-align: center; line-height: 1.4; padding: 16px 44px; }
+.btn-primary.multiline::after { display: none; }
+
+/* SECTIONS */
+section { padding: 90px 80px; }
+.section-eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; display: block; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 48px; color: var(--text-dark); }
+
+/* WHY SECTION */
+.why-section { background: var(--warm-white); }
+.why-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.situation-box { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 36px; box-shadow: var(--shadow); }
+.situation-box h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--text-dark); margin-bottom: 20px; }
+.situation-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; color: var(--text-mid); }
+.situation-item:last-of-type { border-bottom: none; }
+.situation-item .icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+.warning-box { background: var(--urgent-light); border: 2px solid #f5c6c5; border-radius: 16px; padding: 24px 28px; margin-top: 24px; display: flex; gap: 14px; align-items: flex-start; }
+.warning-box .warn-icon { font-size: 1.5rem; flex-shrink: 0; }
+.warning-box p { font-size: 0.95rem; color: var(--text-dark); font-weight: 500; line-height: 1.55; }
+.warning-box p strong { color: var(--urgent); }
+.law-highlight { background: var(--teal-pale); border-left: 4px solid var(--teal); border-radius: 0 16px 16px 0; padding: 28px 32px; }
+.law-highlight p { font-size: 1rem; color: var(--text-dark); line-height: 1.65; }
+.law-highlight strong { color: var(--teal-dark); }
+.law-icon { font-size: 2.5rem; margin-bottom: 16px; display: block; }
+
+/* CONSEQUENCES */
+.consequences-section { background: var(--cream); }
+.cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.cons-card { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 32px; position: relative; overflow: hidden; transition: box-shadow 0.25s; }
+.cons-card:hover { box-shadow: var(--shadow); }
+.cons-num { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 900; color: var(--teal-pale); position: absolute; top: 16px; right: 24px; line-height: 1; pointer-events: none; }
+.cons-card.danger .cons-num { color: #fde8e7; }
+.cons-icon { font-size: 1.8rem; margin-bottom: 14px; display: block; }
+.cons-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+.cons-card.danger h3 { color: var(--urgent); }
+.cons-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; }
+
+/* FIX 1: conclusion box — teal instead of black */
+.cons-conclusion {
+  margin-top: 40px; padding: 28px 36px;
+  background: var(--teal-pale);
+  border: 2px solid var(--teal-light);
+  border-radius: 20px;
+  display: flex; align-items: center; gap: 20px;
+}
+.cons-conclusion .icon { font-size: 2rem; flex-shrink: 0; }
+.cons-conclusion p { font-size: 1rem; line-height: 1.6; color: var(--text-dark); }
+.cons-conclusion strong { color: var(--teal-dark); }
+
+/* DATES */
+.dates-section { background: var(--warm-white); }
+.dates-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; background: #fff; box-shadow: var(--shadow); }
+.date-row { padding: 32px 36px; border-right: 1px solid var(--border); }
+.date-row:last-child { border-right: none; }
+.date-row.highlighted { background: var(--teal-pale); }
+.date-row.deadline { background: var(--urgent-light); }
+.date-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; display: block; }
+.date-row.highlighted .date-tag { color: var(--teal); }
+.date-row.deadline .date-tag { color: var(--urgent); }
+.date-headline { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+.date-row.deadline .date-headline { color: var(--urgent); }
+.date-desc { font-size: 0.9rem; color: var(--text-mid); line-height: 1.5; }
+.progress-row { margin-top: 12px; }
+.progress-track { height: 5px; background: var(--border); border-radius: 50px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 50px; background: var(--teal); width: 0; transition: width 1.5s cubic-bezier(0.4,0,0.2,1); }
+.progress-fill.red { background: var(--urgent); }
+
+/* INCLUDED — no illustration, single column list */
+.included-section { background: var(--cream); }
+.included-item { display: flex; align-items: flex-start; gap: 18px; padding: 26px 0; border-bottom: 1px solid var(--border); max-width: 760px; }
+.included-item:last-child { border-bottom: none; }
+.included-check { flex-shrink: 0; width: 32px; height: 32px; background: var(--teal-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--teal); font-size: 0.9rem; font-weight: 700; margin-top: 2px; }
+.included-text strong { display: block; font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
+.included-text span { font-size: 0.88rem; color: var(--text-mid); }
+
+/* ABOUT — FIX 5: circle photo next to name, no layout grid */
+.about-section { background: var(--teal-dark); color: #fff; }
+.about-section .section-eyebrow { color: var(--teal-light); }
+.about-header {
+  display: flex; align-items: center; gap: 28px; margin-bottom: 36px;
+}
+.about-circle-photo {
+  width: 96px; height: 96px; border-radius: 50%;
+  object-fit: cover; object-position: center top;
+  border: 3px solid rgba(255,255,255,0.3);
+  flex-shrink: 0; display: block;
+}
+.about-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; line-height: 1.1; color: #fff; }
+.cred-item { display: flex; align-items: center; gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.12); max-width: 640px; }
+.cred-item:last-of-type { border-bottom: none; }
+.cred-check { width: 28px; height: 28px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; }
+.cred-item span { font-size: 0.95rem; line-height: 1.5; }
+.about-quote { margin-top: 32px; padding: 24px 28px; border-left: 3px solid var(--teal-light); background: rgba(255,255,255,0.07); border-radius: 0 12px 12px 0; font-size: 1rem; line-height: 1.65; opacity: 0.9; font-style: italic; max-width: 640px; }
+
+/* URGENT */
+.urgent-section { background: var(--urgent-light); padding: 70px 80px; border-top: 1px solid #f5c6c5; border-bottom: 1px solid #f5c6c5; }
+.urgent-layout { display: grid; grid-template-columns: auto 1fr; gap: 60px; align-items: center; max-width: 900px; margin: 0 auto; }
+.urgent-icon-wrap { width: 100px; height: 100px; background: var(--urgent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.4rem; box-shadow: 0 8px 30px rgba(192,57,43,0.35); }
+.urgent-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--urgent); margin-bottom: 12px; }
+.urgent-text { font-size: 0.95rem; color: var(--text-mid); margin-bottom: 20px; }
+.reason-item { display: flex; align-items: flex-start; gap: 12px; font-size: 0.9rem; color: var(--text-mid); margin-bottom: 10px; }
+.reason-dot { width: 6px; height: 6px; background: var(--urgent); border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
+
+/* FORM */
+.form-section { background: #fff; border-top: 1px solid var(--border); }
+/* FIX 7: single column form, no photo */
+.field-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; max-width: 560px; }
+.field-group label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-mid); }
+.field-group input { border: 1.5px solid var(--border); border-radius: 12px; padding: 14px 18px; font-family: 'Jost', sans-serif; font-size: 0.95rem; color: var(--text-dark); background: var(--cream); outline: none; transition: border-color 0.2s, box-shadow 0.2s; width: 100%; }
+.field-group input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(78,143,130,0.12); background: #fff; }
+.radio-group { display: flex; flex-direction: column; gap: 10px; max-width: 560px; }
+.radio-label { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border: 1.5px solid var(--border); border-radius: 12px; cursor: pointer; transition: all 0.2s; background: var(--cream); }
+.radio-label:hover { border-color: var(--teal); background: var(--teal-pale); }
+.radio-label input { accent-color: var(--teal); width: 18px; height: 18px; }
+.radio-label span { font-size: 0.92rem; font-weight: 500; }
+.submit-btn { background: var(--teal); color: #fff; border: none; border-radius: 50px; padding: 18px 44px; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: all 0.3s; margin-top: 8px; box-shadow: 0 8px 30px rgba(78,143,130,0.3); width: 100%; max-width: 560px; }
+.submit-btn:hover { background: var(--teal-dark); transform: translateY(-2px); }
+.form-note { font-size: 0.82rem; color: var(--text-light); line-height: 1.5; margin-top: 12px; max-width: 560px; }
+/* FIX 8: contact box without photo */
+.form-contact-box { margin-top: 40px; padding: 28px; background: var(--teal-pale); border-radius: 20px; max-width: 560px; }
+.form-contact-box p { font-size: 0.78rem; font-weight: 600; letter-spacing: 1px; color: var(--text-mid); text-transform: uppercase; margin-bottom: 16px; text-align: center; }
+.contact-btn { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid var(--border); border-radius: 12px; padding: 14px 18px; text-decoration: none; color: var(--text-dark); font-size: 0.92rem; font-weight: 500; margin-bottom: 10px; transition: border-color 0.2s; }
+.contact-btn:last-child { margin-bottom: 0; }
+.contact-btn:hover { border-color: var(--teal); }
+
+/* FINAL CTA */
+.final-cta { background: linear-gradient(135deg, var(--teal-dark), var(--teal)); color: #fff; text-align: center; padding: 100px 80px; }
+.final-eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-light); margin-bottom: 12px; display: block; }
+.final-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.2; margin-bottom: 48px; }
+.cta-prices { display: flex; justify-content: center; gap: 32px; margin-bottom: 48px; flex-wrap: wrap; align-items: center; }
+.cta-when { font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.65; margin-bottom: 6px; display: block; }
+.cta-amount { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: #a8ddd4; }
+.cta-strike .cta-amount { text-decoration: line-through; opacity: 0.5; color: #fff; }
+.cta-divider { font-size: 2rem; opacity: 0.3; }
+.btn-cta-large { display: inline-flex; align-items: center; gap: 12px; background: #fff; color: var(--teal-dark); border-radius: 50px; padding: 20px 52px; font-family: 'Jost', sans-serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+.btn-cta-large:hover { background: var(--teal-pale); transform: translateY(-3px); }
+.final-contacts { margin-top: 40px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+.final-contacts a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+.final-contacts a:hover { color: #fff; }
+
+/* FOOTER */
+footer { background: var(--text-dark); color: rgba(255,255,255,0.5); text-align: center; padding: 28px 40px; font-size: 0.82rem; }
+
+/* ANIMATIONS */
+.anim { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.anim.in { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero { padding: 48px 24px; }
+  section { padding: 60px 24px; }
+  .why-layout { grid-template-columns: 1fr; gap: 32px; }
+  .cons-grid { grid-template-columns: 1fr; }
+  .dates-grid { grid-template-columns: 1fr; }
+  .date-row { border-right: none; border-bottom: 1px solid var(--border); }
+  .date-row:last-child { border-bottom: none; }
+  .urgent-layout { grid-template-columns: 1fr; }
+  .urgent-icon-wrap { width: 70px; height: 70px; font-size: 1.8rem; }
+  .site-header { padding: 14px 20px; }
+  .final-cta { padding: 70px 24px; }
+  .about-header { gap: 18px; }
+  .about-circle-photo { width: 72px; height: 72px; }
+}
+</style>
+</head>
+<body>
+
+<div class="urgency-banner">
+  ⚡ До <strong>20 апреля</strong> — тариф «Базовый» всего <strong>4 000 Kč</strong> &nbsp;|&nbsp; Дедлайн подачи: <strong>4 мая 2026</strong>
+</div>
+
+<header class="site-header">
+  <a href="#" class="logo">
+    <!-- FIX 2: logo with onerror fallback -->
+    <img src="logo.png" alt="НоV — Наталья Воинова"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <span class="logo-fallback">№V</span>
+  </a>
+  <a href="#form" class="header-cta">Заказать расчет</a>
+</header>
+
+<!-- HERO — FIX 3: no photo -->
+<div class="hero anim">
+  <span class="hero-eyebrow">📋 Годовой отчет S.R.O. 2025</span>
+  <h1>Годовой отчет<br>для <em>S.R.O.</em> за 2025 год:<br>дедлайн 4 мая</h1>
+  <p class="hero-sub">У вас S.R.O. без оборотов?<br><strong>Отчет всё равно нужно подать!</strong></p>
+  <div class="price-cards">
+    <div class="price-card featured">
+      <div class="badge">До 20 апреля</div>
+      <div class="label">Тариф Базовый</div>
+      <div class="amount">4 000 <span style="font-size:1rem;font-weight:400">Kč</span></div>
+      <div class="desc">(полный расчет всех отчетов)</div>
+    </div>
+    <div class="price-card urgent-card">
+      <div class="label">Тариф Срочный</div>
+      <div class="amount">6 000 <span style="font-size:1rem;font-weight:400">Kč</span></div>
+      <div class="desc">(с 20 апреля, при подаче в последний момент)</div>
+    </div>
+  </div>
+  <a href="#form" class="btn-primary">Заказать расчет отчета</a>
+</div>
+
+<!-- WHY -->
+<section class="why-section anim">
+  <span class="section-eyebrow">Ваша ситуация</span>
+  <h2 class="section-title">Это касается вас,<br>если у вас S.R.O.</h2>
+  <div class="why-layout">
+    <div>
+      <div class="situation-box">
+        <h3>Вы зарегистрировали S.R.O., но...</h3>
+        <div class="situation-item"><span class="icon">❌</span><span>Компания не ведет деятельность</span></div>
+        <div class="situation-item"><span class="icon">❌</span><span>Нет оборотов или они минимальные</span></div>
+        <div class="situation-item"><span class="icon">❌</span><span>Вы думаете: «Раз нет оборотов, значит и отчеты не нужны»</span></div>
+        <div class="warning-box">
+          <div class="warn-icon">⚠️</div>
+          <p>Это <strong>опасное заблуждение!</strong><br>Даже «нулевая» S.R.O. обязана подавать годовой отчет.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="law-highlight">
+        <span class="law-icon">⚖️</span>
+        <p>Даже если у S.R.O. нет оборотов, годовой отчет подавать <strong>ОБЯЗАТЕЛЬНО</strong>.<br><br>
+        Это требование закона, и игнорирование приводит к серьезным последствиям — штрафам, черным спискам и даже принудительной ликвидации компании.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSEQUENCES -->
+<section class="consequences-section anim">
+  <span class="section-eyebrow">Последствия несдачи отчетов</span>
+  <h2 class="section-title">Что будет, если не подать отчет<br>для «нулевой» S.R.O.</h2>
+  <div class="cons-grid">
+    <div class="cons-card danger">
+      <div class="cons-num">1</div>
+      <span class="cons-icon">💸</span>
+      <h3>Штрафы от налоговой</h3>
+      <p>За непредоставление отчетности штрафы от 50 000 Kč и выше. Даже если у компании нет оборотов.</p>
+    </div>
+    <div class="cons-card danger">
+      <div class="cons-num">2</div>
+      <span class="cons-icon">🚫</span>
+      <h3>Занесение в черный список</h3>
+      <p>S.R.O. могут занести в список ненадежных плательщиков. Это создаст проблемы, если вы захотите возобновить деятельность.</p>
+    </div>
+    <div class="cons-card danger">
+      <div class="cons-num">3</div>
+      <span class="cons-icon">🏛️</span>
+      <h3>Принудительная ликвидация</h3>
+      <p>Если отчеты не подаются несколько лет подряд, компанию могут ликвидировать принудительно через суд.</p>
+    </div>
+    <div class="cons-card danger">
+      <div class="cons-num">4</div>
+      <span class="cons-icon">👤</span>
+      <h3>Личная ответственность директора</h3>
+      <p>За неподачу отчетов отвечает директор S.R.O. Штрафы и долги могут быть взысканы лично с вас.</p>
+    </div>
+  </div>
+  <!-- FIX 1: teal background instead of black -->
+  <div class="cons-conclusion">
+    <div class="icon">💡</div>
+    <p>Вывод простой: <strong>дешевле подать отчет за 4 000 Kč сейчас</strong>, чем разбираться со штрафами от 50 000 Kč и последствиями потом.</p>
+  </div>
+</section>
+
+<!-- DATES -->
+<section class="dates-section anim">
+  <span class="section-eyebrow">Сроки и цены</span>
+  <h2 class="section-title">Чем раньше обратитесь,<br>тем выгоднее для вас</h2>
+  <div class="dates-grid">
+    <div class="date-row highlighted">
+      <span class="date-tag">⏰ До 20 апреля</span>
+      <div class="date-headline">4 000 Kč</div>
+      <p class="date-desc">Тариф «Базовый» (полный расчет всех отчетов по специальной цене).</p>
+      <div class="progress-row">
+        <div class="progress-track"><div class="progress-fill" data-w="60"></div></div>
+      </div>
+    </div>
+    <div class="date-row">
+      <span class="date-tag">📌 С 20 апреля</span>
+      <div class="date-headline">6 000 Kč</div>
+      <p class="date-desc">Тариф «Срочный» (для тех, кто откладывает до последнего).</p>
+      <div class="progress-row">
+        <div class="progress-track"><div class="progress-fill red" data-w="85"></div></div>
+      </div>
+    </div>
+    <div class="date-row deadline">
+      <span class="date-tag">🔴 4 мая 2026</span>
+      <div class="date-headline">Крайний срок!</div>
+      <p class="date-desc">Дедлайн подачи годового отчета в налоговую. Это важно!</p>
+      <div class="progress-row">
+        <div class="progress-track"><div class="progress-fill red" data-w="100"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED — FIX 4: no illustration, clean list -->
+<section class="included-section anim">
+  <span class="section-eyebrow">Состав услуги</span>
+  <h2 class="section-title">Что вы получаете за 4 000 Kč</h2>
+  <div class="included-item">
+    <div class="included-check">✓</div>
+    <div class="included-text">
+      <strong>Расчет всех трех отчетов: FÚ, OSSZ и VZP</strong>
+      <span>Полный пакет налоговой декларации и страховых отчетов</span>
+    </div>
+  </div>
+  <div class="included-item">
+    <div class="included-check">✓</div>
+    <div class="included-text">
+      <strong>Работа на уникальной платформе</strong>
+      <span>Разработанной специально для наших клиентов</span>
+    </div>
+  </div>
+  <div class="included-item">
+    <div class="included-check">✓</div>
+    <div class="included-text">
+      <strong>Проверка документов и консультация</strong>
+      <span>Все расчеты проверяются, отвечаем на вопросы в процессе</span>
+    </div>
+  </div>
+  <div class="included-item">
+    <div class="included-check">✓</div>
+    <div class="included-text">
+      <strong>Опыт работы с «нулевыми» S.R.O.</strong>
+      <span>Знаем специфику компаний без оборотов и сложных ситуаций</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT — FIX 5: circle photo next to name -->
+<section class="about-section anim">
+  <span class="section-eyebrow">Ваш бухгалтер</span>
+  <div class="about-header">
+    <img src="natalia_circle.png" alt="Наталья Воинова" class="about-circle-photo">
+    <h2 class="about-title">Наталья Воинова</h2>
+  </div>
+  <div class="cred-item">
+    <div class="cred-check">✓</div>
+    <span>26 лет опыта в бухгалтерии</span>
+  </div>
+  <div class="cred-item">
+    <div class="cred-check">✓</div>
+    <span>Профессиональный бухгалтер в Чехии</span>
+  </div>
+  <div class="cred-item">
+    <div class="cred-check">✓</div>
+    <span>Специализация: OSVČ, S.R.O., налоговые декларации</span>
+  </div>
+  <div class="cred-item">
+    <div class="cred-check">✓</div>
+    <span>Опыт работы с «нулевыми» S.R.O. и сложными ситуациями</span>
+  </div>
+  <div class="about-quote">
+    Вы получаете не просто расчет, вы получаете спокойствие. Все документы корректны. Все сроки соблюдены. Никаких штрафов.
+  </div>
+</section>
+
+<!-- URGENT -->
+<section class="urgent-section anim">
+  <div class="urgent-layout">
+    <div class="urgent-icon-wrap">⚠️</div>
+    <div>
+      <h3 class="urgent-title">С 20 апреля — срочный тариф 6 000 Kč</h3>
+      <p class="urgent-text">Если вы передадите документы после 20 апреля, стоимость составит 6 000 Kč.</p>
+      <div class="reason-item"><div class="reason-dot"></div><span>Сжатые сроки до дедлайна 4 мая, меньше времени на подготовку</span></div>
+      <div class="reason-item"><div class="reason-dot"></div><span>Большой объем заказов в последние недели перед дедлайном</span></div>
+      <div class="reason-item"><div class="reason-dot"></div><span>Это стимул не откладывать на последний момент</span></div>
+      <br>
+      <a href="#form" class="btn-primary multiline" style="margin-top:16px; width:fit-content;">
+        <span>Заказать</span>
+        <span>с экономией</span>
+        <span>2&nbsp;000&nbsp;Kč</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FORM — FIX 6: no company field, FIX 7: no photo, FIX 8: Telegram instead of WhatsApp -->
+<section class="form-section anim" id="form">
+  <span class="section-eyebrow">📝 Оформить заказ</span>
+  <h2 class="section-title">Заказать расчет годового<br>отчета для S.R.O.</h2>
+  <p style="color:var(--text-mid);margin-bottom:28px;font-size:0.95rem;max-width:560px;">
+    Заполните форму, мы свяжемся с вами в течение 24 часов и пришлём инструкции по документам.
+  </p>
+  <form action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST">
+    <input type="hidden" name="_subject" value="Новая заявка — годовой отчет S.R.O.">
+    <input type="hidden" name="_cc" value="fbl@voinova.tax">
+    <div class="field-group">
+      <label>Имя и фамилия *</label>
+      <input type="text" name="name" placeholder="Иван Иванов" required>
+    </div>
+    <div class="field-group">
+      <label>Номер телефона *</label>
+      <input type="tel" name="phone" placeholder="+420 000 000 000" required>
+    </div>
+    <div class="field-group">
+      <label>Email *</label>
+      <input type="email" name="email" placeholder="vash@email.cz" required>
+    </div>
+    <div class="field-group">
+      <label>Ситуация с компанией</label>
+      <div class="radio-group">
+        <label class="radio-label"><input type="radio" name="situation" value="Нулевая SRO" required><span>«Нулевая» S.R.O. (нет оборотов)</span></label>
+        <label class="radio-label"><input type="radio" name="situation" value="Минимальные обороты"><span>Минимальные обороты</span></label>
+        <label class="radio-label"><input type="radio" name="situation" value="Не подавались отчеты несколько лет"><span>Не подавались отчеты несколько лет</span></label>
+      </div>
+    </div>
+    <button type="submit" class="submit-btn">Отправить заявку →</button>
+    <p class="form-note">После отправки вы получите письмо с инструкциями по подготовке документов и реквизитами для оплаты.</p>
+  </form>
+
+  <!-- FIX 7+8: no photo, Telegram link -->
+  <div class="form-contact-box">
+    <p>Есть вопросы?</p>
+    <a href="https://t.me/VNata" class="contact-btn"><span style="font-size:1.3rem">✈️</span> Написать в Telegram</a>
+    <a href="mailto:fbl@voinova.tax" class="contact-btn"><span style="font-size:1.3rem">✉️</span> Написать на email</a>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta anim">
+  <span class="final-eyebrow">⏰ Дедлайн 4 мая 2026</span>
+  <h2>Не откладывайте<br>на последнюю неделю</h2>
+  <div class="cta-prices">
+    <div>
+      <span class="cta-when">До 20 апреля</span>
+      <div class="cta-amount">4 000 Kč</div>
+    </div>
+    <div class="cta-divider">→</div>
+    <div class="cta-strike">
+      <span class="cta-when">После 20 апреля</span>
+      <div class="cta-amount">6 000 Kč</div>
+    </div>
+  </div>
+  <a href="#form" class="btn-cta-large">Заказать расчет отчета →</a>
+  <div class="final-contacts">
+    <a href="https://t.me/VNata">✈️ Telegram: @VNata</a>
+    <a href="mailto:fbl@voinova.tax">✉️ fbl@voinova.tax</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Наталья Воинова · Бухгалтерские услуги в Чехии · OSVČ &amp; S.R.O.</p>
+</footer>
+
+<script>
+(function() {
+  var els = document.querySelectorAll('.anim');
+  function reveal() {
+    var wh = window.innerHeight;
+    for (var i = 0; i < els.length; i++) {
+      var r = els[i].getBoundingClientRect();
+      if (r.top < wh * 0.9) {
+        els[i].classList.add('in');
+        var bars = els[i].querySelectorAll('[data-w]');
+        for (var j = 0; j < bars.length; j++) {
+          (function(b) {
+            setTimeout(function() { b.style.width = b.getAttribute('data-w') + '%'; }, 300);
+          })(bars[j]);
+        }
+      }
+    }
+  }
+  reveal();
+  window.addEventListener('scroll', reveal, { passive: true });
+  window.addEventListener('resize', reveal, { passive: true });
+
+  var radios = document.querySelectorAll('.radio-label input');
+  for (var i = 0; i < radios.length; i++) {
+    radios[i].addEventListener('change', function() {
+      var all = document.querySelectorAll('.radio-label');
+      for (var k = 0; k < all.length; k++) { all[k].style.borderColor = ''; all[k].style.background = ''; }
+      if (this.checked) {
+        this.closest('.radio-label').style.borderColor = 'var(--teal)';
+        this.closest('.radio-label').style.background = 'var(--teal-pale)';
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
