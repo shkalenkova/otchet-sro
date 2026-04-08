@@ -347,9 +347,11 @@ footer{background:var(--text-dark);color:rgba(255,255,255,.5);text-align:center;
   <p style="color:var(--text-mid);margin-bottom:28px;font-size:.95rem;max-width:560px">
     Заполните форму, мы свяжемся с вами в течение 24 часов и пришлём инструкции по документам.
   </p>
-  <form action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST">
-    <input type="hidden" name="_subject" value="Новая заявка — годовой отчет S.R.O.">
-    <input type="hidden" name="_cc" value="fbl&#64;voinova.tax">
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="d159e237-c456-4fe8-b6a4-a71072a1e26e">
+    <input type="hidden" name="subject" value="Новая заявка — годовой отчет S.R.O.">
+    <input type="hidden" name="from_name" value="Сайт voinova.tax — S.R.O.">
+    <input type="hidden" name="cc" value="fbl&#64;voinova.tax">
     <div class="fg"><label>Имя и фамилия *</label><input type="text" name="name" placeholder="Иван Иванов" required></div>
     <div class="fg"><label>Номер телефона *</label><input type="tel" name="phone" placeholder="+420 000 000 000" required></div>
     <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="vash@email.cz" required></div>
@@ -377,7 +379,7 @@ footer{background:var(--text-dark);color:rgba(255,255,255,.5);text-align:center;
     </a>
     <a href="#" id="mailto-link" class="cbtn">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2-8 5-8-5h16Zm0 12H4V8l8 5 8-5v10Z" fill="#4e8f82"/></svg>
-      fbl@voinova.tax
+      <span class="__cf_email__" data-cfemail="5731353b1721383e393821367923362f">[email&#160;protected]</span>
     </a>
   </div>
 </section>
@@ -402,7 +404,7 @@ footer{background:var(--text-dark);color:rgba(255,255,255,.5);text-align:center;
     </a>
     <a href="#" id="mailto-link-2">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2-8 5-8-5h16Zm0 12H4V8l8 5 8-5v10Z" fill="rgba(255,255,255,0.75)"/></svg>
-      fbl@voinova.tax
+      <span class="__cf_email__" data-cfemail="6503070925130a0c0b0a13044b11041d">[email&#160;protected]</span>
     </a>
   </div>
 </section>
@@ -411,7 +413,7 @@ footer{background:var(--text-dark);color:rgba(255,255,255,.5);text-align:center;
   <p>&#169; 2025 &#1053;&#1072;&#1090;&#1072;&#1083;&#1100;&#1103; &#1042;&#1086;&#1080;&#1085;&#1086;&#1074;&#1072; &middot; &#1041;&#1091;&#1093;&#1075;&#1072;&#1083;&#1090;&#1077;&#1088;&#1089;&#1082;&#1080;&#1077; &#1091;&#1089;&#1083;&#1091;&#1075;&#1080; &#1074; &#1063;&#1077;&#1093;&#1080;&#1080; &middot; OSV&#268; &amp; S.R.O.</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
   /* set email links safely so Cloudflare can not parse them */
   var e='fbl'+'@'+'voinova'+'.tax';
@@ -448,14 +450,4 @@ footer{background:var(--text-dark);color:rgba(255,255,255,.5);text-align:center;
   for(var i=0;i<radios.length;i++){
     radios[i].addEventListener('change',function(){
       var all=document.querySelectorAll('.rl');
-      for(var k=0;k<all.length;k++){all[k].style.borderColor='';all[k].style.background='';}
-      if(this.checked){
-        this.closest('.rl').style.borderColor='var(--teal)';
-        this.closest('.rl').style.background='var(--teal-pale)';
-      }
-    });
-  }
-})();
-</script>
-</body>
-</html>
+      for
